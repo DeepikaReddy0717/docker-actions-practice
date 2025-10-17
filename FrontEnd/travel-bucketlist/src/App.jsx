@@ -133,52 +133,53 @@ export default function App() {
 
       <h2>Travel Bucket List Manager</h2>
 
-      <DestinationForm
-        destination={destination}
-        setDestination={setDestination}
-        addDestination={addDestination}
-        updateDestination={updateDestination}
-        editMode={editMode}
-        resetForm={resetForm}
-      />
-
-      <div className="fetch-by-id">
-        <h3>Get Destination By ID</h3>
-        <input
-          type="text"
-          value={idToFetch}
-          onChange={(e) => setIdToFetch(e.target.value)}
-          placeholder="Enter ID"
+      {/* ===== Left Panel ===== */}
+      <div className="left-panel">
+        <DestinationForm
+          destination={destination}
+          setDestination={setDestination}
+          addDestination={addDestination}
+          updateDestination={updateDestination}
+          editMode={editMode}
+          resetForm={resetForm}
         />
-        <button className="btn-blue" onClick={getDestinationById}>Fetch</button>
 
-        {fetchedDestination && (
-          <div className="fetched">
-            {fetchedDestination && (
-  <div className="fetched">
-    <h4>Result:</h4>
-    <table>
-      <tbody>
-        <tr><td>ID</td><td>{fetchedDestination.id}</td></tr>
-        <tr><td>Name</td><td>{fetchedDestination.name}</td></tr>
-        <tr><td>Location</td><td>{fetchedDestination.location}</td></tr>
-        <tr><td>Description</td><td>{fetchedDestination.description}</td></tr>
-        <tr><td>Category</td><td>{fetchedDestination.category}</td></tr>
-        <tr><td>Priority</td><td>{fetchedDestination.priority}</td></tr>
-      </tbody>
-    </table>
-  </div>
-)}
+        <div className="fetch-by-id">
+          <h3>Get Destination By ID</h3>
+          <input
+            type="text"
+            value={idToFetch}
+            onChange={(e) => setIdToFetch(e.target.value)}
+            placeholder="Enter ID"
+          />
+          <button className="btn-blue" onClick={getDestinationById}>Fetch</button>
 
-          </div>
-        )}
+          {fetchedDestination && (
+            <div className="fetched">
+              <h4>Result:</h4>
+              <table>
+                <tbody>
+                  <tr><td>ID</td><td>{fetchedDestination.id}</td></tr>
+                  <tr><td>Name</td><td>{fetchedDestination.name}</td></tr>
+                  <tr><td>Location</td><td>{fetchedDestination.location}</td></tr>
+                  <tr><td>Description</td><td>{fetchedDestination.description}</td></tr>
+                  <tr><td>Category</td><td>{fetchedDestination.category}</td></tr>
+                  <tr><td>Priority</td><td>{fetchedDestination.priority}</td></tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
       </div>
 
-      <DestinationList
-        destinations={destinations}
-        handleEdit={handleEdit}
-        deleteDestination={deleteDestination}
-      />
+      {/* ===== Right Panel ===== */}
+      <div className="right-panel">
+        <DestinationList
+          destinations={destinations}
+          handleEdit={handleEdit}
+          deleteDestination={deleteDestination}
+        />
+      </div>
     </div>
   );
 }
