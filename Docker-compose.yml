@@ -18,7 +18,7 @@ services:
       context: ./BackEnd/travel-bucketlist-backend
       dockerfile: backend.Dockerfile
     ports:
-      - "2009:5000"
+      - "2008:3000"
     depends_on:
       - mysqldb
     restart: on-failure
