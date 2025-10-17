@@ -27,7 +27,7 @@ services:
     image: deepikareddy0717/ab:latest
     container_name: react
     ports:
-      - "5003:80"
+      - "2000:80"
     depends_on:
       - backend
     restart: on-failure
