@@ -13,7 +13,7 @@ services:
       - springboot-mysql-net
 
   backend:
-    image: deepikareddy0717/aa:latest
+    image: deepikareddy0717/bb:latest
     container_name: springboot
     ports:
       - "5001:5000"
@@ -24,7 +24,7 @@ services:
       - springboot-mysql-net
 
   frontend:
-    image: deepikareddy0717/ab:latest
+    image: deepikareddy0717/ba:latest
     container_name: react
     ports:
       - "2000:80"
