@@ -1,5 +1,5 @@
 const config = {
-  url: "http://localhost:2008/travelapi"
+  url: "http://localhost:5001/travelapi"
 };
 
 export default config;
